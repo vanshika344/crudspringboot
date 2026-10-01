@@ -47,11 +47,11 @@ public class StudentService {
             return null;
         }
         Student studentToSave=existingStudent.get();
-        studentToSave.setName(studentToSave.getName());
-        studentToSave.setRollno(studentToSave.getRollno());
-        studentToSave.setSubject(studentToSave.getSubject());
-        studentToSave.setEmail(studentToSave.getEmail());
-        studentToSave.setAge(studentToSave.getAge());
+        studentToSave.setName(studentReq.getName());
+        studentToSave.setRollno(studentReq.getRollno());
+        studentToSave.setSubject(studentReq.getSubject());
+        studentToSave.setEmail(studentReq.getEmail());
+        studentToSave.setAge(studentReq.getAge());
         return studentRepository.save(studentToSave);
     }
 
