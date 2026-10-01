@@ -3,3 +3,4 @@ read one GET--->/api/students/get/{id}
 read all = GET-->/api/students/get
 update = PUT--> /api/students/update/{id}(with the details to update)
 delete= DELETE--->/api/students/delete/{id}
+soft delete= PATCH--> /api/students/delete-soft/{id}

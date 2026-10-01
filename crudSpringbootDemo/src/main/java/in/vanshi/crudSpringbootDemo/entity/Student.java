@@ -1,6 +1,8 @@
 package in.vanshi.crudSpringbootDemo.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
@@ -8,6 +10,7 @@ public class Student {
     //spring jpa manage this not ioc container
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -15,6 +18,7 @@ public class Student {
     private String email;
     private int rollno;
     private String subject;
+    private boolean deleted;
 
     public Long getId() {
         return id;
@@ -64,4 +68,11 @@ public class Student {
         this.age = age;
     }
 
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
 }
