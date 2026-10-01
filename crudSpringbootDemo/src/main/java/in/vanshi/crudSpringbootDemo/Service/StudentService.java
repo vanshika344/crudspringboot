@@ -2,7 +2,6 @@ package in.vanshi.crudSpringbootDemo.Service;
 
 import in.vanshi.crudSpringbootDemo.entity.Student;
 import in.vanshi.crudSpringbootDemo.repository.StudentRepository;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +20,7 @@ public class StudentService {
     }
 
     public Student createStudent(Student studentReq) {
+        studentReq.setId(null);
         studentReq.setDeleted(false);
         Student studentResp=studentRepository.save(studentReq);
         return studentResp;

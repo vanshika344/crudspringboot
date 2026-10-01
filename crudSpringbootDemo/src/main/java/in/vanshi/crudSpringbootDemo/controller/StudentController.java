@@ -70,7 +70,7 @@ public class StudentController {
         Boolean isDeleted = studentService.deleteStudent(id);
 
         if(!isDeleted){
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         return ResponseEntity.ok(true);
     }
