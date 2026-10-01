@@ -56,8 +56,8 @@ public class StudentService {
     }
 
     public Boolean deleteStudent(Long id) {
-      Boolean isStudent = studentRepository.existsById(id);
-        if(!isStudent) return false;
+        Optional<Student> existing = studentRepository.findByIdAndDeletedIsFalse(id);
+        if(existing.isEmpty()) return false;
         studentRepository.deleteById(id);
         return true;
     }
