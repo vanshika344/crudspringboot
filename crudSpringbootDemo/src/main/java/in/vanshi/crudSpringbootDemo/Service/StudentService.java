@@ -41,8 +41,8 @@ public class StudentService {
     List<Student> studentList=studentRepository.findByDeletedIsFalse();
     return studentList;}
 
-    public Student updateStudent(Long id){
-        Optional<Student> existingStudent = studentRepository.findById(id);
+    public Student updateStudent(Long id, Student studentReq) {
+        Optional<Student> existingStudent = studentRepository.findByIdAndDeletedIsFalse(id);
         if(existingStudent.isEmpty()) {
             return null;
         }

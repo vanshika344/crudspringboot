@@ -54,8 +54,8 @@ public class StudentController {
     //update
 
     @PutMapping("/update")
-    public ResponseEntity<Student> updateStudent(@RequestParam Long id ){
-        Student studentResp = studentService.updateStudent(id);
+    public ResponseEntity<Student> updateStudent(@RequestParam Long id ,  @RequestBody Student student){
+        Student studentResp = studentService.updateStudent(id, student);
 
         if (studentResp==null){
             return ResponseEntity.notFound().build();
