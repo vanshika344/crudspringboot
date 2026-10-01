@@ -52,7 +52,6 @@ public class StudentService {
         studentToSave.setSubject(studentToSave.getSubject());
         studentToSave.setEmail(studentToSave.getEmail());
         studentToSave.setAge(studentToSave.getAge());
-        studentToSave.setDeleted(false);
         return studentRepository.save(studentToSave);
     }
 
